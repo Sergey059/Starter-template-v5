@@ -6,7 +6,7 @@ SaSS, PUG, Autoprefixer, Webpack-stream, Babel, Image optimization
 
 Проверка обновлений - "ncu"
 
-Обновление пакетов в package.json - "ncu -u"
+Обновление в package.json - "ncu -u"
 
 Установка пакетов - "npm install"
 
