@@ -1,0 +1,28 @@
+doctype html
+html(lang="ru-RU")
+	head
+		meta(charset="utf-8")
+		//- base(href="/")>
+		title Starter project v5
+		meta(name="description" content="Домашнее задание к уроку 3")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
+		link(rel="icon" href="images/favicon.png")
+		meta(property="og:image" content="images/dist/preview.jpg")
+		link(rel="stylesheet" href="css/main.min.css")
+	
+	body
+
+		include blocks/_header
+
+		.content
+			.container
+				h1 Starter project v5
+				p Content
+				include ../components/block-1/block-1
+				include ../components/block-2/block-2
+
+		include blocks/_footer
+
+		script(src="js/app.min.js")
+
+

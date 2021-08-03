@@ -1,0 +1,182 @@
+// USER VARIABLES SECTION
+
+$accent: orange // Accent Color
+$fontsize: 16px // Body Font Size
+$textcolor: #333 // Text Color
+$lineheight: 1.65 // Document Line Height
+$lato-light: lato-light, sans-serif // User Font Family
+$lato-regular: lato-regular, sans-serif // User Font Family
+$lato-bold: lato-bold, sans-serif // User Font Family
+$lato-black: lato-black, sans-serif // User Font Family
+$lato-italic: lato-italic, sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+$transition: 0.3s ease
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+//@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+//@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+@include font('lato-regular', normal, 400, '../fonts/Lato-Regular.woff2')
+@include font('lato-light', normal, 200, '../fonts/Lato-Light.woff2')
+@include font('lato-bold', normal, 700, '../fonts/Lato-Bold.woff2')
+@include font('lato-black', normal, 800, '../fonts/Lato-Black.woff2')
+@include font('lato-italic', italic, normal, '../fonts/Lato-Italic.woff2')
+@include font('icomoon', normal, 400, '../fonts/icon.woff2')
+
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder
+	color: #a2a2a2
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+html
+	min-height: 100vh
+	height: 100%
+body
+	min-width: 320px
+	height: 100%
+	display: flex
+	flex-direction: column
+	position: relative
+	font-family: $lato-light
+	font-size: $fontsize
+	line-height: $lineheight
+	letter-spacing: 0.25px
+	color: $textcolor
+	overflow-x: hidden
+	
+.header,
+.footer
+	flex: 0 0 auto
+.content
+	flex: 1 0 auto
+
+.container
+	margin: 0 auto
+	max-width: 1140px
+img
+	max-width: 100%
+	height: auto
+a
+	text-decoration: none
+	transition: $transition
+ul, li
+	margin: 0
+	padding: 0
+	list-style-type: none
+details
+	position: relative
+	&[open]
+		.icon-caret-down
+			display: inline-block
+			transform: rotate(180deg)
+			transition: $transition
+summary
+	list-style-type: none
+button
+	display: inline-block
+	border: none
+	outline: none
+	background: transparent
+	cursor: pointer
+	transition: $transition
+input
+	outline: none
+	border: none
+
+[class^="icon-"], [class*=" icon-"]
+	/* use !important to prevent issues with browser extensions that change fonts
+	font-family: 'icomoon' !important
+	speak: never
+	font-style: normal
+	font-weight: normal
+	font-variant: normal
+	text-transform: none
+	line-height: 1
+
+	/* Better Font Rendering ===========
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+.icon-cancel:before
+	content: "\e90a"
+
+.icon-google:before
+	content: "\e907"
+
+.icon-corona:before
+	content: "\e904"
+	color: #f16d7f
+
+.icon-sale:before
+	content: "\e905"
+	color: #f16d7f
+	font-size: 40px
+
+.icon-truck:before
+	content: "\e906"
+	color: #f16d7f
+
+.icon-cart:before
+	content: "\e902"
+
+.icon-angle-down:before
+	content: "\e911"
+
+.icon-star-half:before
+	content: "\e90f"
+
+.icon-star:before
+	content: "\e910"
+
+.icon-heart-o:before
+	content: "\e90e"
+
+.icon-pinterest-p:before
+	content: "\e90c"
+
+.icon-linkedin:before
+	content: "\e908"
+
+.icon-twitter:before
+	content: "\e909"
+
+.icon-facebook:before
+	content: "\e90b"
+
+.icon-long-arrow-right:before
+	content: "\e903"
+
+.icon-caret-down:before
+	content: "\e901"
+
+.icon-search:before
+	content: "\e900"
+	color: #a3a3a3
