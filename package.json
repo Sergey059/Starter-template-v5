@@ -1,9 +1,9 @@
 {
-	"name": "optimizedhtml",
+	"name": "starterhtml",
 	"version": "5.0.0",
-	"description": "OptimizedHTML 5 - Lightweight Gulp Starter",
+	"description": "Starter template for site layout",
 	"main": "index.js",
-	"author": "WebDesign Master",
+	"author": "Sergey059",
 	"license": "ISC",
 	"scripts": {
 		"start": "gulp",
