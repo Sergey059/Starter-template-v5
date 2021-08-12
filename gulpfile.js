@@ -15,6 +15,7 @@ const imagemin     = require('gulp-imagemin')
 const newer        = require('gulp-newer')
 const rsync        = require('gulp-rsync')
 const del          = require('del')
+const gcmq         = require('gulp-group-css-media-queries')
 
 function browsersync() {
 	browserSync.init({
@@ -59,6 +60,7 @@ function styles() {
 	return src([`app/sass/*.*`, `!app/sass/_*.*`])
 		.pipe(sassglob())
 		.pipe(sass())
+		.pipe(gcmq())
 		.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true }))
 		.pipe(cleancss({ level: { 1: { specialComments: 0 } },/* format: 'beautify' */ }))
 		.pipe(rename({ suffix: ".min" }))
