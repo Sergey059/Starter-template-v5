@@ -18,10 +18,7 @@ $gutter: $grid-gutter-width
 
 // IMPORT SECTION
 
-@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
-//@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
-//@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
-// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+@import "node_modules/normalize.css/normalize"
 
 // FONTS LOAD SECTION
 
@@ -42,19 +39,10 @@ $gutter: $grid-gutter-width
 
 // GENERAL DOCUMENT STYLES
 
-::placeholder
-	color: #a2a2a2
-
-::selection
-	background-color: $accent
-	color: #fff
-
-input, textarea
-	outline: none
-	&:focus:required:invalid
-		border-color: red
-	&:required:valid
-		border-color: green
+*,
+::before,
+::after
+	box-sizing: border-box
 
 html
 	min-height: 100vh
@@ -72,17 +60,14 @@ body
 	color: $textcolor
 	overflow-x: hidden
 	
-.header,
-.footer
-	flex: 0 0 auto
-.content
+.site-content
 	flex: 1 0 auto
 
 .container
 	margin: 0 auto
 	max-width: 1140px
 img
-	max-width: 100%
+	width: 100%
 	height: auto
 a
 	text-decoration: none
@@ -110,6 +95,19 @@ button
 input
 	outline: none
 	border: none
+::placeholder
+	color: #a2a2a2
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
 
 [class^="icon-"], [class*=" icon-"]
 	/* use !important to prevent issues with browser extensions that change fonts
