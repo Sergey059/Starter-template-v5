@@ -1,0 +1,16 @@
+-
+	let menu = [
+		{url: "/", text: "Главная"},
+		{url: "catalog.html", text: "Каталог"},
+		{url: "contacts.html", text: "Контакты"}
+	]
+
+nav.nav
+	ul.nav__list
+		each el,i in menu
+			if isPage == i+1
+				li.nav__item.active
+					a.nav__link(href=el.url) #{el.text}
+			else
+				li.nav__item
+					a.nav__link(href=el.url) #{el.text}
